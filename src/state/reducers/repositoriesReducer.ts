@@ -7,8 +7,14 @@ interface RepositoriesState {
 	data: string[];
 }
 
-const reducer = (
-	state: RepositoriesState,
+const initialState = {
+	loading: false,
+	error: null,
+	data: [],
+};
+
+const repositoriesReducers = (
+	state: RepositoriesState = initialState,
 	action: Action
 ): RepositoriesState => {
 	switch (action.type) {
@@ -23,4 +29,4 @@ const reducer = (
 	}
 };
 
-export default reducer;
+export default repositoriesReducers;
